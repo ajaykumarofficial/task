@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/auth': {
-        target: 'http://localhost:3000',
+        target: 'https://task-backend-h6qy.onrender.com/',
         changeOrigin: true,
         secure: false,
       },

@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 
 
 const mongoDB = process.env.MONGO_URI;
+const port = process.env.PORT || 4000
 
 
 const app =express()
@@ -20,6 +21,6 @@ app.use('/auth',userRoute)
 mongoose.connect(mongoDB)
   .then(() => {
     console.log('MongoDB connected');
-    app.listen(3000, () => console.log('Server running on server'));
+    app.listen(port, () => console.log('Server running on server'));
   })
   .catch(err => console.error('MongoDB connection error:', err));
